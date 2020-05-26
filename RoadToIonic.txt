@@ -1,0 +1,141 @@
+Ionic with Angular: 
+
+	html, css, JS => web development => Browser => Browser Engine ( Chrome v8 ), 
+	
+	
+	
+	Datatypes
+	
+	functions
+	
+	iteration
+	
+	
+	Javascript: 
+	
+		- > Language of browser
+		
+		-> User Interaction
+		
+		-> NodeJS => MEAN => MongoDB, ExpressJS, Angular, NodeJS
+					 MERN => MongoDB, ExpressJS, ReactJS, NodeJS
+					 
+		-> browser console 
+		
+			window, document
+			
+		-> type less or dynamic type programimng language
+		
+		
+		-> Javascript language following ECMA Specification pattern (ECMA => European Computer manufacturar assocition)
+			
+		
+	DataTypes:
+	
+		number => 12, 1.2, -10, 
+		
+		string => "text", 'textt', `Text
+			skbkdfds
+			nksdfndsjds `
+			
+		boolean => true, false
+		
+		object => { "key" : "value" }
+		
+		json => { "key" : : "value" }
+		
+		Array => [1,2,3]
+		
+	 Variable Declaration:
+	 
+	 
+		var, let, const
+		
+		var myStr = "test";
+		
+		let myStr = "test";
+		
+		const myStr = "test";
+		
+		
+		1. should not start with _ || number 
+		
+		2. camelCase
+		
+			myName, getMyName()
+			
+		3. meaningful
+		
+		4. should not contain any space
+		
+		
+			var my name = "";
+		
+		
+		
+		{
+			let myStr = ""'
+		}
+		
+		
+		
+		Array Funcitons :
+		
+			map => convert array into another array
+			
+			filter => based on condition		
+		
+			forEach =>
+			
+			findIndex => 
+			
+			find =>
+			
+		
+		Cosntional statment:
+		
+		
+		if(booelan || condition to return boolean) {
+			
+			
+			
+		}
+		
+		else if () {
+		
+		}
+		
+		else {
+		
+		}
+			
+		Relational Operators:
+			==, <, >, <= , >= , ===
+			
+			
+			
+		Function:
+		
+			1990 => ES3, ES4, 
+			
+			2015 => ES5, ES2015
+			
+			2016 => ES6 ( => Lambda )
+			
+			
+		
+		user interaction
+		
+		event listeners
+			
+	
+			
+			
+		
+		
+		
+		
+	
+		
+	
+		
