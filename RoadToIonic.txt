@@ -13,7 +13,7 @@ Ionic with Angular:
 	
 	Javascript: 
 	
-		- > Language of browser
+		-> Language of browser
 		
 		-> User Interaction
 		
@@ -124,9 +124,64 @@ Ionic with Angular:
 			
 			
 		
-		user interaction
+		UserInteraction:
 		
-		event listeners
+		
+			document => getElementById, getElementsByClassName, getElementsByTagName
+			
+						querySelector, querySelectorAll
+						
+	
+	
+		backEnd app
+		
+			Java, python
+			
+				RestFul API => 'https://www.domain.com/v1/employees' ('GET' , 'POST' , 'PUT', 'DELETE')
+				
+					=> Request -> GET(--), POST (ADD) || PUT (UPDATE) (obj)
+					
+					=> Response -> Response
+				
+		
+		XMLHttpRequest
+			- 
+			
+	
+	
+		DisAdv JS:
+		
+			1. Typeless
+			
+			2. addtional code
+			
+		Google => AngualrJS (Angualr1) => javascript
+		
+		Angular 2 -> 9 => Typscript
+		
+			
+			1. Typed Language
+			
+			2. Compile time error
+			
+			3.  Typescript script => JS
+			
+			
+			function login(userName, password) { }
+			
+			
+			function login(userName: string, password:string){}
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	 Typesciprt
+	 
 			
 	
 			
