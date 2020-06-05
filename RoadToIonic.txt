@@ -151,7 +151,7 @@ Ionic with Angular:
 	
 		DisAdv JS:
 		
-			1. Typeless
+			1. Typeless | Dynamic typing
 			
 			2. addtional code
 			
@@ -172,15 +172,294 @@ Ionic with Angular:
 			
 			function login(userName: string, password:string){}
 		
+	
+	
+	 Typescript:
+	 
+		1. superset of javascript
+		
+		2. Types => Typed Javasript
+		
+		3. OOPS
+		
+		4. Compiler
+		
+		5. compile time error
 		
 		
+	Environment Setup:
+	
+		1. NodeJS
+			
+			node and npm 
+			
+				node
+				
+				npm => bootstrap 
+				
+				npm i bootstrap 
+				
+				node_modules
+				
+					bootstrap
+						dist						
+						css
+						js
+						
+				package.json
+				
+				{					
+				
+					"dependencies" : {
+					
+						"bootstrap" : "^4.0.0"
+					}
+					
+				}
+				
+		2. Typescirpt
+			
+			npm install -g typescript
+			
+			
+			1. my-scirpt.ts
+			
+				tsc my-scirpt.ts => my-scirpt.js
+				
+				tsc --init
+				
+				
+				
+				
+			DataTypes:
+			
+				number string, boolean, objeect, Array, Tuple, Union, enum, class
+				
+				
 		
+		
+		Angular
+			
+			tsconfig.json
+			package.json
+			
+		
+		
+		VS code extension:			
+			ESLint
+			Prettier
+			Debugger for chrome
+			Path intelisense
+			Material Icon Theme
+			Dracula theme
+			
+			
+			
+			
+		Angualr Framework
+
+
+
+			module:
+			
+				shopping- list => list out
+				
+				shpoing-detail-view =>
+				
+				
+				shopping.module => [shopping-list, shopping-detail]
+				
+				
+				shopping.module
+				
+			Form => 
+			
+				Angular FormsModule  => 
+				
+						HttpModule =>
+				
+				
+				App Module => [ FormsModule ]
+		
+		
+			Webpack
+			
+				Budling => JS, CSS
+				
+			
+			History: 
+			
+				Google
+					Angular => Angular Material 
+				
+					JS => 
+					
+						jQuery 
+						
+							document.getElementById('userName') => $('userName')
+							
+							
+						
+					AngularJS ( Angualr 1.x )
+					
+						SPA => one root Html => remaining partial HTML
+					
+						Model, view, Controller => PAttern
+						
+						Shopping 
+						
+							List => feature => HTML, CSS, JS
+							
+								shopping-list.html => 
+								shopping-list.css => View
+								shopping-list.js => Controller
+								
+									Product => modal
+									
+									
+					AngularJS + Typescirpt 
+					
+						Angualr ( 2 to 9 )
+						
+						
+							Advanced MVC pattern => Component || widgets
+							
+							one component => HTML, CSS, TS
+								
+								shopping-list.html => 
+								shopping-list.css => View
+								shopping-list.ts => Controller
+								
+					Html
+					
+						header | navbar => header.component
+						
+						homepage => homepage.component						
+						
+						footer => footer.component
+						
+						
+					h1, h2 => predifined HTML tag
+					
+					<app-root></app-root>
+						shopping-list.html =>  <div> Test </div>
+						shopping-list.css => View
+						shopping-list.ts => Controller => selector : "app-root"
+						
+						shopping-list.spec.ts =>
+						
+						
+					Routing
+					
+						SPA
+						
+							index.html
+							
+								based on url change, if content change means that is routing
+								
+								<app-detail>
+								
+					
+				
+				
+				
+		
+			package.json
+			
+			scripts: {
+				build : "npm install build"
+			},
+			
+				dependenciies : {
+				
+				
+				}
+				
+			Environment:
+			
+				
+				tsc
+				
+				ng
+				
+				npm install -g @angular/cli
+				
+				npm uninstall -g @angular/cli
+				
+				npm install -g @angular/cli@latest
+
+
+		Angular
+			
+			Component
+				Angular 1 -> Angular 2
+				
+				Angular 2 -> 9
+				
+					JIT compiler => Just In Time Compiler 4
+					
+					6 => AOT compiler => AheadOf Time Compiler
+					
+					9 => Ivy compiler
+					
+				Angualr 2 -> 9 => backward compatibilty
+				
+		UI Framework:
+		
+			desktop => Mobile => compatabilty
+			
+			bootstrap and Angualr material => CSS frameworks (set of clases) => bootstrap.min.css		|
+			
+			
+		Testing:
+		
+			Karma|jasmine => unit test framework
+			
+			
+				Test cases => to ensure application feature is working fine
+				
+				
+				
+	
+			
+			
+		Ng | angualr CLI commands
+		
+		
+			ng --version
+			
+			ng new ApplicationName --skipInstall=true --skipTests=true
+			
+			ng serve => starts application and runs the application in port no : 4200
+			
+			http://localhost:4200 => get some view
+			
+			ng g
+			 
+		
+			
+					
+				
+					
+					
+				
+				
+				
+			
+				
+				
+				
 		
 		
 		
 	
-	
-	 Typesciprt
+		
+		
+		
+	 
+		
+	 
+		
 	 
 			
 	
