@@ -49,3 +49,12 @@
 <div class="m-2">
   <input type="text" class="form-control" [(ngModel)]="title" />
 </div>
+
+<button
+  type="button"
+  (click)="clearUserName()"
+  class="btn btn-info"
+  [disabled]=""
+>
+  Clear
+</button>

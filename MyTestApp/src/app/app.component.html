@@ -14,9 +14,15 @@
 
   <ht-login></ht-login>
 
-  <ht-header></ht-header>
+  <ht-header [id]="myId"></ht-header>
 
-  <ht-products></ht-products>
+  <ht-products
+    [products]="appProducts"
+    (callParentEvent)="onChildEmit($event)"
+  ></ht-products>
+  <!-- Products Component => products
+    (click)="onChildEmit($event)"
+  -->
 
   <ht-users></ht-users>
 

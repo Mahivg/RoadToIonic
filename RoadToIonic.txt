@@ -703,7 +703,101 @@ Ionic with Angular:
 		
 		Component Communication :
 		
+			1. Custom Property Binding and Event Emitter ( @Input, @Output)
 			
+				=> Parent and Child
+				
+				AppComponent
+				
+					.component.ts
+					
+						appProducts : Product[] = [
+						new Product(1,'Test),
+						new Product()
+					]
+					.component.html
+						<ht-products [products]="appProducts"> </ht-products>
+				
+			
+				 <ht-products> =>
+
+				 Products Component
+				 
+				 .component.ts
+				 
+					title = 'test'
+					
+					Product => custom type  {
+									  id: number;
+
+									  name: string;
+
+									  description: string;
+
+									  price: number;
+
+									  colors: string[];
+
+									  active: boolean;
+							}
+					
+					products: Product[];
+					
+					nums : number[] = [1,2,3,4,5]
+				 
+				.Html
+					
+					{{ title }}
+					
+					
+					<div *ngFor="let num of nums">
+						{{ num }} => 1,2,3,
+					</div>
+ 
+ 
+					<div *ngFor="let product of products">
+						{{ product.name }}
+					</div>
+					
+					
+					
+			
+			
+			Component to Html
+				Property binding => []
+				
+			Child to parent
+			
+			
+				Child HTML to controller
+				
+			Product.compoent.ts
+			
+				callParentEvent = new EventEmitter<string>();
+
+				callParent() {
+				
+					this.callParentEvent.emit('string')
+				}
+				
+				.component.html
+					button => callParent()
+					
+			AppComponent.ts
+			
+				onChildEmit(event) { }
+				
+			
+				.html
+				
+					// (click)="displyDetails()"
+				
+					(callParentEvent)='onChildEmit($event)'
+					
+					
+			
+			
+				
 				
 				
 				

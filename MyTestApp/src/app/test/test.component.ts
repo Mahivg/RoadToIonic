@@ -77,4 +77,8 @@ export class TestComponent
     console.log(' ngOnInit ..... ');
     this.nums = [1, 2, 3, 4, 5, 6];
   }
+
+  clearUserName() {
+    this.title = '';
+  }
 }
