@@ -652,6 +652,67 @@ Ionic with Angular:
 						() => (click)
 			2. Two way data binding
 			
+				title = "test"
+				
+				{{title}} => test
+				
+				title -> test => test1
+				
+				(click)=> onButtonClick()=> title = "test1";
+				
+				
+				 [(ngModel)]="title"
+				 
+					Form controls
+					
+					FormsModule => Form controls
+					
+		Life Cycle Methods:
+		
+			@Component
+			Class
+			
+			constructor(){}
+				
+				
+			1.ngOnChanges => OnChanges
+			
+			2.ngOnInit => OnInit => After constrcutor => initialize
+			
+			3.ngDoCheck => DoCheck => After ngOnInit
+			
+			4.ngAfterContentInit =>
+			
+			5.ngAfterContentChecked =>
+			
+			6.ngAfterViewInit => component HTML
+			
+			7.ngAfterViewChecked => Component HTML redered
+			
+			8. ngOnDestroy => clean up code
+			
+			
+			ht-test
+				title
+				
+				html
+					=> rendered
+					
+					
+			ht-login
+		
+		Component Communication :
+		
+			
+				
+				
+				
+				
+			
+				
+					
+						
+			
 		
 			
 			
