@@ -1,0 +1,51 @@
+<p [ngStyle]="{ 'background-color': 'aqua' }">login works!</p>
+
+<p class=""></p>
+
+<p [ngClass]="{ test: true }">Class example</p>
+
+<p *ngIf="false; else hiddenBlock">
+  I will be hidden
+</p>
+
+<ng-template #hiddenBlock>
+  <p>I will be shown, if you hidden</p>
+</ng-template>
+
+<!-- [1,2,3,4,5]-->
+<p
+  *ngFor="
+    let num of nums;
+    index as ind;
+    odd as oddValue;
+    let evenValue = even;
+    let isFirst = first;
+    let isLast = last
+  "
+>
+  {{ num }} -- {{ ind }} -- {{ oddValue }} -- {{ evenValue }} --
+  {{ isFirst }} -- {{ isLast }}
+</p>
+
+<h3>String Interpolation</h3>
+
+<p>
+  {{ getTitle() }}
+</p>
+
+<p>{{ myObj.name }}</p>
+
+<h3>Property binding</h3>
+
+<p [innerHtml]="title"></p>
+
+<div id="{{ myDivId }}"></div>
+
+<div [id]="myDivId"></div>
+
+<button type="button" class="btn btn-success" (click)="onButtonClicked($event)">
+  Click Me
+</button>
+<div class="m-2">
+  <input type="text" class="form-control" [(ngModel)]="title" />
+</div>

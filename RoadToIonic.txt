@@ -428,13 +428,234 @@ Ionic with Angular:
 		
 			ng --version
 			
-			ng new ApplicationName --skipInstall=true --skipTests=true
+			ng new ApplicationName --skipInstall=true --skipTests=true --prefix=ht
 			
 			ng serve => starts application and runs the application in port no : 4200
 			
 			http://localhost:4200 => get some view
 			
 			ng g
+			
+			
+		Main.ts
+			Bootrstarp => AppModule
+			
+		AppModule
+		
+			**.ts
+			
+			
+		AppComponent => Root componet => index.html			
+			header
+			homepage
+			footer
+		
+		
+		Component
+			selector : 'app-root',
+			
+				html => ''
+				css => 
+				ts =>
+				
+		Bootrstarp
+		
+			
+			
+		Component
+			@Component => decorator || annotation
+			
+			meta data : {
+				selector : 'app-root',
+				templateUrl: ./app.component.html'
+				
+			
+			}
+			
+			
+			CSS selector
+				h1 {
+					color: red;
+				}
+				
+				.test {
+					color: blue;
+				}
+				
+				input[type="text"] {
+				
+				}
+			
+			
+			<h1 class="test">
+			
+			
+			<app-root> </app-root>
+			
+		Directive 
+		
+			selector: '[app-root]'
+			
+			
+		header
+			products users log-out
+			
+		Login
+			Logout
+			
+		products 
+		
+			product-detail
+			
+			product-add
+	
+		users		
+			user-detail
+			
+			
+		Component creation
+		
+			ng generate component 'componentName' --skipTests=true --prefix=ht
+			
+			ng g c login --skipTests=true --prefix=ht
+			
+			ng new MyTestApp --skipTests=true --prefix=ht||app
+			
+			ng g c login
+			
+		
+			
+			
+		header
+			products users log-out
+			
+		Login
+			Logout
+			
+		products 
+		
+			product-detail
+			
+			product-add
+	
+		users		
+			user-detail
+			
+		footer
+		
+		
+
+	Directives
+	
+		isAllowUser = true;
+	
+		<div style="background-color: blue" >
+			
+		</div>
+		
+		1. Attribute Directive
+		
+			=> add additional behaviour
+			
+				{
+					'background-color' : 'blue',
+					
+					'color' : 'green'
+				}
+
+
+				? :
+				
+				1 == 1 ? 'trueValue' : 'falseValue'
+			
+				[ngStyle]="{ 'background-color : truthy|falsy statemene ?'blue' : 'green' }"
+				
+						
+				[ngClass] = " { 'className' : "truthy|falsy statemenent"}"
+				
+			=> it does'nt change the html tag tree
+		2. Structural Directive
+		
+			=> It will alter the html tree
+			
+			ngIf, ngFor
+			
+			ngIf="truthy || falsy"
+			
+				<p *ngIf="1 == 1" > </p>
+				
+				
+				<p *ngIf="1 !== 1" > </p>
+				
+				
+				<p *ngIf="1 == 1; elseBlock" > </p>
+				
+				<ng-template #elseBlock>
+				
+					<p> </p>
+				
+				
+				</ng-template>
+				
+			ngFor => iteration
+			
+			let nums = [1,2,3,4,5];
+			
+			{{ nums[0] }}			
+			{{ nums[1] }}
+			{{ nums[2] }}
+			{{ nums[3] }}
+			{{ nums[4] }}
+			
+			
+			for(var i =0; i<nums.length ; i++ ) {
+				
+			}
+			
+			<p *ngFor="let num of nums" > {{num}} </p>
+			
+		3. custom directive
+		
+			attribute
+			
+			sturcutral
+				
+		
+		Data Binding: 
+		
+			1. One way data binding
+			
+				=> Controller to Html
+				
+					=> String Interpolation
+					
+							--> {{ title }}
+					
+					=> property binding 
+					
+						[] => [myDivId]
+				
+				=> Html to Controller
+				
+					click, mouseover
+					
+					click => call a method in contoller
+					
+					<button on-click="method()" >
+					<button (click)="method($event)">
+							method() => should exists in controller
+							
+							$event => source event object
+							
+							
+					-> Event Binding
+						() => (click)
+			2. Two way data binding
+			
+		
+			
+			
+			
 			 
 		
 			
