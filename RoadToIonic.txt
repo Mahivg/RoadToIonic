@@ -783,7 +783,7 @@ Ionic with Angular:
 				.component.html
 					button => callParent()
 					
-			AppComponent.ts
+			AppComponent.ts    
 			
 				onChildEmit(event) { }
 				
@@ -794,6 +794,65 @@ Ionic with Angular:
 				
 					(callParentEvent)='onChildEmit($event)'
 					
+					
+					
+				Parent
+				
+					title
+				
+					appProducts = [....]
+					
+				.html
+					<ht-products [products]="appProducts"></ht-products>
+					
+					
+					Child
+					 'ht-products'
+						title
+					
+					  @Input() products = []
+					  
+					  
+		
+			@Output => Custom Event Emitter
+				Products
+				
+					.html => Call Parent 
+					
+					
+					.ts
+						method()
+					
+					
+				AppComponent
+				
+					onChildEmit()
+					
+					
+			AppComponent
+			
+					<ht-header (event)="
+			
+				
+			
+			
+				Header
+				
+				
+					Emit 
+					
+			Service and Depency Injection
+			
+			
+			
+			Routing
+			
+			
+			
+			
+					
+					
+			
 					
 			
 			

@@ -10,6 +10,8 @@ export class ProductsComponent implements OnInit {
   @Input() products: Product[];
   // click =>
 
+  // @Output click = new EventEmitter<MouseEvent>();
+
   @Output() callParentEvent = new EventEmitter<string>(); // custom event like click
 
   myObj: { name: string; age: number };

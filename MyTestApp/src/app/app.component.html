@@ -1,6 +1,21 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-  <div class="m-2">
+<ht-header [id]="myId" (onFeatureChange)="changeFeature($event)"></ht-header>
+
+<!-- <div class="menu">
+  <button class="btn btn-info m-2" (click)="changeFeature('login')">
+    Login
+  </button>
+
+  <button class="btn btn-info m-2" (click)="changeFeature('products')">
+    Products
+  </button>
+
+  <button class="btn btn-info m-2" (click)="changeFeature('users')">
+    Users
+  </button>
+</div> -->
+<div class="container" [id]="'testDiv'" #testDiv>
+  <!-- <h1>{{ title }}</h1> -->
+  <!-- <div class="m-2">
     <button
       type="button"
       class="btn btn-success"
@@ -10,13 +25,12 @@
     </button>
   </div>
 
-  <ht-test *ngIf="showTest"></ht-test>
+  <ht-test *ngIf="showTest"></ht-test> -->
 
-  <ht-login></ht-login>
-
-  <ht-header [id]="myId"></ht-header>
+  <ht-login *ngIf="feature == 'login'"></ht-login>
 
   <ht-products
+    *ngIf="feature == 'products'"
     [products]="appProducts"
     (callParentEvent)="onChildEmit($event)"
   ></ht-products>
@@ -24,7 +38,6 @@
     (click)="onChildEmit($event)"
   -->
 
-  <ht-users></ht-users>
-
-  <ht-footer></ht-footer>
+  <ht-users *ngIf="feature == 'users'"></ht-users>
 </div>
+<ht-footer></ht-footer>
