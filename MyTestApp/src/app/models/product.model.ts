@@ -11,6 +11,8 @@ export class Product {
 
   active: boolean;
 
+  // constructor() {}
+
   constructor(
     pId: number,
     pName: string,

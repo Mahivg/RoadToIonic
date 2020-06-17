@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
+import { SingletonExample } from './models/Singleton';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     TestComponent,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [SingletonExample], // => new SingletonEXmaple() => pass the instance
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -707,7 +707,7 @@ Ionic with Angular:
 			
 				=> Parent and Child
 				
-				AppComponent
+				AppComponent ( parent)
 				
 					.component.ts
 					
@@ -721,7 +721,7 @@ Ionic with Angular:
 			
 				 <ht-products> =>
 
-				 Products Component
+				 Products Component ( child )
 				 
 				 .component.ts
 				 
@@ -741,7 +741,7 @@ Ionic with Angular:
 									  active: boolean;
 							}
 					
-					products: Product[];
+				@Input() products: Product[];
 					
 					nums : number[] = [1,2,3,4,5]
 				 
@@ -848,8 +848,118 @@ Ionic with Angular:
 			Routing
 			
 			
+			Product
+			
+				id
+				
+				name
+				
+				description
+				
+				price
+				
+				
+			Employee
+			
+				empId
+				
+				empName				
+				
+				designation
+				
+				
+			export class Person {
+			
+				id: number;
+				
+				name: string;
+				
+				constrcutor(pId: number, pname: string){
+					this.id = pId;
+					
+					this.name = pname;
+				}
+				
+			
+			}
 			
 			
+			let person1 = new Person();
+			
+			let person1 = new Person(1, 'name'); => REF 
+		
+		
+		Only one time initialization
+		
+			  this.prod1 = new Product(1, 'Prod 1', 'test 1', 10, [], true); => REF
+			  
+			  this.prod1.id
+			  
+			 Singleton Object
+			 
+				1. @Injectable() => top of class
+				
+				2. got to Appmodule => providers: [] => providers: [ SingletonExample ]
+				
+				3. in components constrcutor mention the class name
+			  
+			  
+		Static Object
+		
+			static keywords
+			  
+			  
+	Service and Dependency Injection
+	
+		HTTP => HttpClientService
+	
+	
+	
+	Dependency Injection => IOC => Without user using new keyword, the object will get value, so creation of object taken care by framework and produces 
+												Singleton Objects => throughout the application we wil have same instance
+												
+					
+	
+	TestService.ts => Singleton procedure => Singleton Objects
+	
+		products[] = [121kndkjnwef];
+		
+		userloggedIn: boolean
+		
+	AppComponent.ts
+		constrcutor(private testService: TestService) {
+	
+			this.testService.products = []; 
+		}
+	
+	
+	logincomponent
+	
+		constrcutor(private testService: TestService) {
+			login() {
+				this.testService.userloggedIn = true;
+			}
+		}
+		
+		
+	Productcomponent
+	
+		constrcutor(private testService: TestService)  {
+			this.products = this.testService.products;
+		}
+		
+		
+		if(testService.userloggedIn == true) {
+		}
+												
+												
+						
+		
+		
+		
+			=
+		
+		
 					
 					
 			

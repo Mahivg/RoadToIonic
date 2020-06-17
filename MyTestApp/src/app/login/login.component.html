@@ -1,4 +1,4 @@
-<div class="login-box">
+<!-- <div class="login-box">
   <div class="controls">
     <h2 class="ht-login-title">Login</h2>
     <div class="form-group">
@@ -18,4 +18,25 @@
       <button type="button" class="btn btn-info m-2">Signup</button>
     </div>
   </div>
+</div> -->
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Desc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let user of users; odd as oddIndex"
+        [ngStyle]="{ 'background-color': oddIndex ? 'grey' : 'aqua' }"
+        [ngClass]="{ test: oddIndex }"
+      >
+        <td>{{ user.name }}</td>
+        <td>{{ user.desc }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
