@@ -902,6 +902,13 @@ Ionic with Angular:
 				2. got to Appmodule => providers: [] => providers: [ SingletonExample ]
 				
 				3. in components constrcutor mention the class name
+				
+				
+				or
+				
+				1. @Injectable({
+					providedIn: 'root'
+				})
 			  
 			  
 		Static Object
@@ -952,7 +959,22 @@ Ionic with Angular:
 		if(testService.userloggedIn == true) {
 		}
 												
-												
+				
+		
+		2. Services for Component communication
+		
+			Service Object => Productcomponent, LoginComponent
+			
+			AppComponent
+				
+				productcomponent => productService => getProducts() => 3 => next time getProducts() => 4
+				
+				productAddComponet => ProductService => getProducts() , addProducts() (products) => 3 + 1 => getProducts() => 4
+				
+				productEditComponent
+		
+		
+			
 						
 		
 		

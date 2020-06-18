@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Product } from '../models/product.model';
 import { TestObj } from '../models/test';
 import { SingletonExample } from '../models/Singleton';
+import { ProductService } from './products.service';
 
 @Component({
   selector: 'ht-products',
@@ -9,7 +10,7 @@ import { SingletonExample } from '../models/Singleton';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  @Input() products: Product[];
+  products: Product[];
   // click =>
 
   // @Output click = new EventEmitter<MouseEvent>();
@@ -26,7 +27,10 @@ export class ProductsComponent implements OnInit {
 
   sng: SingletonExample;
 
-  constructor(singleTon: SingletonExample) {
+  constructor(
+    singleTon: SingletonExample,
+    private productService: ProductService
+  ) {
     this.sng = singleTon;
   }
 
@@ -57,8 +61,11 @@ export class ProductsComponent implements OnInit {
     // console.log(this.prod2);
 
     // this.sng = new SingletonExample();
-    console.log(this.sng);
-    this.sng.product = new Product(1, 'Prod 1', 'test 1', 10, [], true);
+    // console.log(this.sng);
+    // this.sng.product = new Product(1, 'Prod 1', 'test 1', 10, [], true);
+
+    console.log(this.productService.getProducts());
+    this.products = this.productService.getProducts();
   }
 
   callParent() {

@@ -31,7 +31,6 @@
 
   <ht-products
     *ngIf="feature == 'products'"
-    [products]="appProducts"
     (callParentEvent)="onChildEmit($event)"
   ></ht-products>
   <!-- Products Component => products

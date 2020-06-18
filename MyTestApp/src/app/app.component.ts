@@ -19,32 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.feature = 'login';
-    this.appProducts = [
-      new Product(
-        1,
-        'Test 1',
-        'Test Description 1',
-        200,
-        ['red', 'blue'],
-        true
-      ),
-      new Product(
-        2,
-        'Test 2',
-        'Test Description 2',
-        200,
-        ['red', 'blue'],
-        true
-      ),
-      new Product(
-        3,
-        'Test 3',
-        'Test Description 3',
-        200,
-        ['red', 'blue'],
-        true
-      ),
-    ];
+    this.appProducts = [];
 
     console.log(this.containerDiv);
   }
