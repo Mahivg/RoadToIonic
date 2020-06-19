@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from './models/product.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ht-root',
@@ -11,15 +12,17 @@ export class AppComponent implements OnInit {
   showTest = true;
   myId = 'MyId';
 
-  feature: string;
+  // feature: string;
 
-  appProducts: Product[];
+  // appProducts: Product[];
 
   @ViewChild('testDiv', { static: true }) containerDiv: any;
 
+  constructor() {}
+
   ngOnInit() {
-    this.feature = 'login';
-    this.appProducts = [];
+    // this.feature = 'login';
+    // this.appProducts = [];
 
     console.log(this.containerDiv);
   }
@@ -28,7 +31,7 @@ export class AppComponent implements OnInit {
     console.log(event);
   }
 
-  changeFeature(myFeature: string) {
-    this.feature = myFeature;
-  }
+  // changeFeature(myFeature: string) {
+  //   this.feature = myFeature;
+  // }
 }

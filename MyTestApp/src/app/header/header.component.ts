@@ -6,13 +6,13 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() onFeatureChange = new EventEmitter<string>();
+  //   @Output() onFeatureChange = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onMenuChange(menu: string) {
-    this.onFeatureChange.emit(menu);
-  }
+  // onMenuChange(menu: string) {
+  //   this.onFeatureChange.emit(menu);
+  // }
 }

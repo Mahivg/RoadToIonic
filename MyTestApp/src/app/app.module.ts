@@ -13,6 +13,14 @@ import { HeaderComponent } from './header/header.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { SingletonExample } from './models/Singleton';
+import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'users', component: UsersComponent },
+];
 
 @NgModule({
   declarations: [
@@ -27,7 +35,12 @@ import { SingletonExample } from './models/Singleton';
     HeaderComponent,
     TestComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    CommonModule,
+    RouterModule.forRoot(appRoutes),
+  ],
   providers: [SingletonExample], // => new SingletonEXmaple() => pass the instance
   bootstrap: [AppComponent],
 })

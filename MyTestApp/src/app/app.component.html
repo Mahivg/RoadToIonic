@@ -1,4 +1,6 @@
-<ht-header [id]="myId" (onFeatureChange)="changeFeature($event)"></ht-header>
+<!-- <ht-header [id]="myId" (onFeatureChange)="changeFeature($event)"></ht-header> -->
+
+<ht-header [id]="myId"></ht-header>
 
 <!-- <div class="menu">
   <button class="btn btn-info m-2" (click)="changeFeature('login')">
@@ -14,6 +16,7 @@
   </button>
 </div> -->
 <div class="container" [id]="'testDiv'" #testDiv>
+  <router-outlet></router-outlet>
   <!-- <h1>{{ title }}</h1> -->
   <!-- <div class="m-2">
     <button
@@ -27,16 +30,18 @@
 
   <ht-test *ngIf="showTest"></ht-test> -->
 
-  <ht-login *ngIf="feature == 'login'"></ht-login>
+  <!-- Place holder -->
+
+  <!-- <ht-login *ngIf="feature == 'login'"></ht-login>
 
   <ht-products
     *ngIf="feature == 'products'"
     (callParentEvent)="onChildEmit($event)"
-  ></ht-products>
+  ></ht-products> -->
   <!-- Products Component => products
     (click)="onChildEmit($event)"
   -->
 
-  <ht-users *ngIf="feature == 'users'"></ht-users>
+  <!-- <ht-users *ngIf="feature == 'users'"></ht-users> -->
 </div>
 <ht-footer></ht-footer>
