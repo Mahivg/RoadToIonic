@@ -972,14 +972,112 @@ Ionic with Angular:
 				productAddComponet => ProductService => getProducts() , addProducts() (products) => 3 + 1 => getProducts() => 4
 				
 				productEditComponent
+				
+		Routing
 		
-		
+			Router => navigationByURL, navigationByURL
 			
+			ActivatedRoute 
+			
+			HttpClient => get('url'), post(url, obj)
+			
+			without new => object => Angular Dependency Injection 
+			
+			constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute, private http: HttpClient){}
+			
+			
+		Routes
+		
+		1. Create Routes
+		
+			In the type of Routes
+		
+			{ path: 'products', component: ProductsComponent },
+			
+			{ path: 'login', component: LoginComponent }
+		
+		
+		2. Inform to Angular
+		 
+			AppModule => Set our routes => RouterModule.forRoot(routes)
+			
+		3. We need to provide a placeholder		
+		
+				<div class="container">
+					<router-outlet></router-outlet>				
+				<div>
+				
+		4. Invoke the URL change
+		
+			<a href="/products" />			
+			
+				localhost:4200/products
+				
+			Angular way
+			
+				<a routerLink="products" /> => prevents browser reloading 
+				
+		5. if you want to apply a css class based on url change
+		
+			localhost:4200/products
+			
+			Login	Products	Users
+			
+			routerLinkActive="active"
+		 
+		 
+			
+		
+		Nested Routing
+		
+			/products => Products component
+			
+			
+			/products/add
+			
+				ProductsComponent
+				
+					.html
+					
+						Add-Product Component
 						
+			/products/1
+			
+				product-details
+				
+				
+				
+		Basic Navigation
 		
-		
-		
-			=
+			@Input and @Output
+			
+			
+			AppComponent
+				
+				feature = 'login';
+				
+				changeFeature(feature:string){
+					feature = feature;
+				}
+				
+				// Buttons => login {changeFeature('login')}	products{changeFeature('products')}	users
+			
+				
+			
+					Header
+					
+					@Output changeFeatureEvent = new EventEmitter<string>()
+					
+						ui
+							li (click)="featurecahnge)
+							
+								a login a products	a users
+					
+					login *ngIf="feature == 'login'"
+					
+					products *ngIf="feature == 'products'"
+					
+					users *ngIf="feature == 'users'"
 		
 		
 					
