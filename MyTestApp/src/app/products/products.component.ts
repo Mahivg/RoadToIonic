@@ -1,15 +1,25 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  EventEmitter,
+  Output,
+  OnDestroy,
+} from '@angular/core';
 import { Product } from '../models/product.model';
 import { TestObj } from '../models/test';
 import { SingletonExample } from '../models/Singleton';
 import { ProductService } from './products.service';
+import { Router } from '@angular/router';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ht-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnDestroy {
   products: Product[];
   // click =>
 
@@ -29,11 +39,13 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     singleTon: SingletonExample,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) {
     this.sng = singleTon;
   }
 
+  productGetSubscribe: Subscription;
   ngOnInit(): void {
     // TestObj.product = new Product(1, 'Prod 1', 'test 1', 10, [], true);
 
@@ -66,11 +78,26 @@ export class ProductsComponent implements OnInit {
 
     console.log(this.productService.getProducts());
     this.products = this.productService.getProducts();
+    this.productGetSubscribe = this.productService.productObserver.subscribe(
+      (data) => console.log(data)
+    );
   }
 
   callParent() {
     this.callParentEvent.emit('From Products Component..!!!');
 
     // $event => From Products Component..!!!
+  }
+
+  goToLogin() {
+    this.router.navigateByUrl('login');
+  }
+
+  goToProductDetail(id: number) {
+    this.router.navigate(['products', id]); // => localhost:4200/products/1
+  }
+
+  ngOnDestroy() {
+    this.productGetSubscribe.unsubscribe();
   }
 }

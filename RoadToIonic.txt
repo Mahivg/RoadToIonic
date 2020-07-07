@@ -1078,9 +1078,131 @@ Ionic with Angular:
 					products *ngIf="feature == 'products'"
 					
 					users *ngIf="feature == 'users'"
-		
-		
 					
+		
+		Programatically Router Navigation:
+		
+			1. Router (Angular service)
+			
+			
+			2. navigate, navigateByURL
+			
+			
+		Path: [ 'login', 'products' , 'users' ]
+		
+		
+		Base URL : localhost:4200
+		
+		localhost:4200/products/23/details => localhost:4200/login
+		
+		HTML :  routerLink = "/login" => Abosolute Path  => localhost:4200/login
+		
+		Relative path
+			localhost:4200/products/23/details/login
+			
+			routerLink="['login']"
+		/login
+		
+		
+		Nested routing
+			/products
+			
+			/products/1/detail
+			
+			routerlink="/1/detail" => localhost:4200/1/detail => localhost:4200/prodcuts/1/details
+			
+			
+			
+	
+		Products
+		
+			3 Product 
+		
+		 Click => product detail component
+
+			1. Programatic navigationByURL
+			
+			2. Product detail component displaying product
+			
+				i. Need a product
+				
+			3. Passing route parameters in route
+			
+				id => From products component 
+				
+							/products/:id => /product/3
+				
+							:id => 1 || 2 || 3 => route
+							
+					In Product detail component
+					
+							Route { id : }
+							
+							id = 1 || 2 || 3
+					
+					
+		Observable => rxjs
+		
+			this.route.snapshot => recorded data
+			
+			
+	Observables
+	
+		=> third party library
+		
+		=> rxjs 
+		
+	Advantage 
+		
+		1. First component (TS) => Emit event
+		
+			Second Component (TS) => Reciever
+		
+		2. modify the data recieved
+		
+			Emitted data can be changed before it recievedby recipient
+			
+		3. Error handling
+		
+		
+	Own Observable
+	
+		1. Pure Observable => 
+		
+		
+			const myObserva = Observable.create( observer => {
+			
+				obesever.next('test');
+			})
+			
+			myObserva..subscribe(data => {})
+			
+		
+		2. Subjects
+		
+			BehaviourSubject
+			
+			
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
+		
+			
 					
 			
 					

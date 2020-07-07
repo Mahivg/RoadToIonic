@@ -10,16 +10,35 @@
         <hr />
         <h3>{{ product.price }}</h3>
       </div>
+      <div>
+        <button
+          type="button"
+          class="btn btn-primary m-2"
+          (click)="goToProductDetail(product.id)"
+        >
+          View Detail
+        </button>
+      </div>
     </div>
   </div>
 </div>
-
+<!-- <ht-test></ht-test> -->
 <div>
   <button type="button" class="btn btn-info m-2" (click)="callParent()">
     Connect To Parent
   </button>
+
+  <button type="button" class="btn btn-info m-2" (click)="goToLogin()">
+    Go TO Login
+  </button>
 </div>
 
-<ht-product-detail></ht-product-detail>
+<div class="row">
+  <div class="col-sm-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
-<ht-product-add></ht-product-add>
+<!-- <ht-product-detail></ht-product-detail>
+
+<ht-product-add></ht-product-add> -->

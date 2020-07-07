@@ -11,6 +11,8 @@ export class Product {
 
   active: boolean;
 
+  imageUrl: string;
+
   // constructor() {}
 
   constructor(
@@ -19,7 +21,8 @@ export class Product {
     pDesc: string,
     pPrice: number,
     pColors: string[],
-    pStatus: boolean
+    pStatus: boolean,
+    pImageUrl: string
   ) {
     this.id = pId;
     this.name = pName;
@@ -27,5 +30,6 @@ export class Product {
     this.price = pPrice;
     this.colors = pColors;
     this.active = pStatus;
+    this.imageUrl = pImageUrl;
   }
 }

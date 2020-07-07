@@ -34,7 +34,15 @@ export class ProductAddComponent implements OnInit {
     const pStatus = this.txtProductStatus.nativeElement.checked;
     const pId = this.productService.getProducts().length + 1;
 
-    const newProduct = new Product(pId, pName, pDesc, pPrice, pColors, pStatus);
+    const newProduct = new Product(
+      pId,
+      pName,
+      pDesc,
+      pPrice,
+      pColors,
+      pStatus,
+      ''
+    );
 
     this.productService.addProduct(newProduct);
   }
