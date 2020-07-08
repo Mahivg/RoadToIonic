@@ -994,7 +994,12 @@ Ionic with Angular:
 		
 			{ path: 'products', component: ProductsComponent },
 			
-			{ path: 'login', component: LoginComponent }
+			{ path: 'login', component: LoginComponent },
+			
+			{ path: '', redirectTo:'login', pathMatch: 'full' } // localhost:4200/ // Default Route
+			
+			{ path: '**', redirectTo:'login', pathMatch: 'full' }, // Wild Route
+			
 		
 		
 		2. Inform to Angular
@@ -1150,7 +1155,7 @@ Ionic with Angular:
 	
 		=> third party library
 		
-		=> rxjs 
+		=> rxjs || rxjs/operators
 		
 	Advantage 
 		

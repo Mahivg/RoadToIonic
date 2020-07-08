@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TestObj } from '../models/test';
 import { SingletonExample } from '../models/Singleton';
+import { AuthService } from '../shared/Auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ht-login',
@@ -39,7 +41,11 @@ export class LoginComponent implements OnInit {
     },
   ];
 
-  constructor(public singtonObj: SingletonExample) {}
+  constructor(
+    public singtonObj: SingletonExample,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     console.log(TestObj.product);
@@ -47,9 +53,18 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    let user = 'sr';
-    console.log(user);
     console.log(this.userNameInput.nativeElement.value);
     console.log(this.passwordInput.nativeElement.value);
+
+    const userName = this.userNameInput.nativeElement.value;
+    const password = this.passwordInput.nativeElement.value;
+
+    const validUser = this.authService.validateUserCred(userName, password);
+    if (validUser) {
+      this.authService.userLogin.next(validUser);
+      this.router.navigateByUrl('/products');
+    } else {
+      alert('Invalid User credentials..!!');
+    }
   }
 }

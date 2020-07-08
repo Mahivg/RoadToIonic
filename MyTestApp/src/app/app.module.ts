@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { SingletonExample } from './models/Singleton';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGaurd } from './shared/AuthGaurd';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,8 +23,11 @@ const appRoutes: Routes = [
     path: 'products',
     component: ProductsComponent,
     children: [{ path: ':id', component: ProductDetailComponent }],
+    canActivate: [AuthGaurd],
   }, // Route { id: 1 }
-  { path: 'users', component: UsersComponent },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGaurd] },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login', pathMatch: 'full' }, // Wild route
 ];
 
 @NgModule({
