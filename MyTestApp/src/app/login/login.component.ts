@@ -3,6 +3,7 @@ import { TestObj } from '../models/test';
 import { SingletonExample } from '../models/Singleton';
 import { AuthService } from '../shared/Auth.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'ht-login',
@@ -13,6 +14,8 @@ export class LoginComponent implements OnInit {
   @ViewChild('txtUserName', { static: true }) userNameInput: ElementRef;
 
   @ViewChild('txtPassword', { static: true }) passwordInput: ElementRef;
+
+  // @ViewChild('loginTDForm', { static: true }) loginTDForm: NgForm;
 
   users: any[] = [
     {
@@ -52,19 +55,26 @@ export class LoginComponent implements OnInit {
     console.log(this.singtonObj);
   }
 
-  login() {
-    console.log(this.userNameInput.nativeElement.value);
-    console.log(this.passwordInput.nativeElement.value);
+  login(loginTdForm: NgForm) {
+    // console.log(this.userNameInput.nativeElement.value);
+    // console.log(this.passwordInput.nativeElement.value);
 
-    const userName = this.userNameInput.nativeElement.value;
-    const password = this.passwordInput.nativeElement.value;
+    // const userName = this.userNameInput.nativeElement.value;
+    // const password = this.passwordInput.nativeElement.value;
 
-    const validUser = this.authService.validateUserCred(userName, password);
-    if (validUser) {
-      this.authService.userLogin.next(validUser);
-      this.router.navigateByUrl('/products');
-    } else {
-      alert('Invalid User credentials..!!');
-    }
+    // const userCred = {
+    //   userName: userName,
+    //   password: password,
+    // };
+
+    // const validUser = this.authService.validateUserCred(userName, password);
+    // if (validUser) {
+    //   this.authService.userLogin.next(validUser);
+    //   this.router.navigateByUrl('/products');
+    // } else {
+    //   alert('Invalid User credentials..!!');
+    // }
+    console.log(loginTdForm);
+    console.log(loginTdForm.value);
   }
 }

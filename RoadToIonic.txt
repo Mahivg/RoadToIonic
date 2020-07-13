@@ -992,7 +992,7 @@ Ionic with Angular:
 		
 			In the type of Routes
 		
-			{ path: 'products', component: ProductsComponent },
+			{ path: 'products', component: ProductsComponent, canActivate: TestClass },
 			
 			{ path: 'login', component: LoginComponent },
 			
@@ -1029,6 +1029,20 @@ Ionic with Angular:
 			Login	Products	Users
 			
 			routerLinkActive="active"
+			
+			
+		Route Gaurd:
+		
+			1. Entering to route => canActivate
+			2. Leaving from Route => canDeactivate
+			
+		1. Create a service(gaurd) class
+		
+		2. implement CanActivate Interface
+		3. override canaActivate Method
+		
+		
+		4. return true or false || true => successfull navigation, false || unsuccessful navigation
 		 
 		 
 			
@@ -1186,6 +1200,105 @@ Ionic with Angular:
 		2. Subjects
 		
 			BehaviourSubject
+			
+			
+			
+	Forms:
+	
+	
+		input => id => document.getElementById('id').value 
+		
+		document.getElementById('id').addEventListener('keydown', function(event) {
+			const val = document.getElementById('id').value ;
+			if(val.length() > 5) {
+				event.preventDefault();
+			}
+		});
+		
+		
+		Template Reference
+		
+			<input type="text" #txtInput />
+			
+			
+			@Viewchild('txtInput) txtInput;
+			
+			
+		Add a New User:
+		<form>
+			<input>
+			
+			<input>
+			
+			<input>
+			
+			<input>
+			
+			<input>			
+		
+		</form>
+		
+		
+			{	
+			
+				firstName: "",
+				lastName: '',
+				emailId: '',
+				mobile: '',
+				gender: '',
+				hobbies: ''	
+			
+			}
+		
+		
+		Forms are needed whenever user interacts with system,
+		
+		Why Angular help?
+		
+			most convinent way to get the result;
+			
+		What Angular provides?
+		
+			1. Template Driven Form (TD Form) => Simple form  => Form will be created in HTML (form tag) => In AppModule import FormsModule
+			
+			2. Reactive Forms  => complex form => Form will be created in component class (TS file ) => In AppModule import ReactiveFormsModule
+			
+			
+		Template Driven Form:
+		
+			1. Create a form tag, provide a templateRef
+				
+				Ex: #loginTDForm='ngForm'
+				
+			2. Register controls
+			
+				provide name attribute to input
+				
+				add ngModel directive
+				
+				Ex: <input type="text" name="userName" ngModel class="form-control />
+				
+			3. Form Template reference
+			
+				=> View child
+				=> pass from method
+				
+			Error Management
+			
+			
+				Forms State
+				
+				
+					1. Submitted value
+					
+					2. Form status					
+					
+					3. Form control status ( touched, dirty(changed or not), invalid)
+			
+		
+			
+		
+		
 			
 			
 			

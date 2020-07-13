@@ -11,7 +11,7 @@ import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { TestComponent } from './test/test.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SingletonExample } from './models/Singleton';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -46,6 +46,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(appRoutes),
   ],
