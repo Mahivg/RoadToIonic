@@ -1295,8 +1295,72 @@ Ionic with Angular:
 					
 					3. Form control status ( touched, dirty(changed or not), invalid)
 			
-		
 			
+			
+	2. Reactive Form
+	
+	=>		Using FormGroup, FromControl we have to create a Form
+		
+		EX: 
+		
+			loginFG = new FormGroup ({
+				userName: new FormControl('', [ Validators Array]) // Validators.required, Validators.minlength(4)
+				password: new FormControl('', [])
+			});
+	
+		
+	=> Binding to Html
+
+
+			IN Form tag, [formGroup] = 'loginFG'
+			
+			Each inputs under form
+				formControlName="userName"
+				
+				
+	=> In form tag, (ngSubmit)="login(loginTDForm)"
+			
+			
+	=> extraction of value
+		loginFG.value
+		
+		
+		
+	User Form
+	
+		firstName
+		
+		lastName
+		
+		mobile
+		
+		Address
+		
+			line1
+			
+			line2
+			
+			pincode
+			
+			
+			
+			
+	Pipes:
+	
+		Modify the Output
+		
+		TS
+		
+			name = "test"
+			
+		Html
+			{{ name | limit:1 }} => n
+		
+		
+	Default
+	
+		uppercase, lowercase, date, json, currency, limitTo
+		
 		
 		
 			

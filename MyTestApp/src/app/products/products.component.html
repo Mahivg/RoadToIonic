@@ -4,11 +4,15 @@
   <div class="col-sm-4" *ngFor="let product of products">
     <div class="card ht-product-card">
       <div class="card-body">
-        <h1>{{ product.name }}</h1>
+        <h1>{{ product.name | uppercase }}</h1>
         <p>{{ product.description }}</p>
 
         <hr />
-        <h3>{{ product.price }}</h3>
+        <h3>{{ product.price | currency: "USD" }}</h3>
+
+        <p>{{ manDate | date: "medium" }}</p>
+
+        <p>{{ myObj | json }}</p>
       </div>
       <div>
         <button

@@ -23,8 +23,7 @@ const appRoutes: Routes = [
     path: 'products',
     component: ProductsComponent,
     children: [{ path: ':id', component: ProductDetailComponent }],
-    canActivate: [AuthGaurd],
-  }, // Route { id: 1 }
+  }, // Route { id: 1 }canActivate: [AuthGaurd],
   { path: 'users', component: UsersComponent, canActivate: [AuthGaurd] },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login', pathMatch: 'full' }, // Wild route

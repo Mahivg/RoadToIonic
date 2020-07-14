@@ -37,6 +37,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   sng: SingletonExample;
 
+  manDate = new Date();
+
   constructor(
     singleTon: SingletonExample,
     private productService: ProductService,
@@ -75,6 +77,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
     // this.sng = new SingletonExample();
     // console.log(this.sng);
     // this.sng.product = new Product(1, 'Prod 1', 'test 1', 10, [], true);
+
+    this.myObj = { name: 'test', age: 10 };
 
     console.log(this.productService.getProducts());
     this.products = this.productService.getProducts();

@@ -1,6 +1,6 @@
 <div class="login-box">
   <div class="controls">
-    <form
+    <!-- <form
       name="loginForm"
       #loginTDForm="ngForm"
       (ngSubmit)="login(loginTDForm)"
@@ -10,21 +10,96 @@
         <label> Username</label>
         <input
           type="text"
-          name="txtUserName"
+          name="userName"
           class="form-control"
           ngModel
           minlength="4"
+          required
         />
 
-        <div class="text-danger">
+        <div
+          class="text-danger"
+          *ngIf="
+            loginTDForm.controls['userName'] &&
+            loginTDForm.controls['userName'].errors
+          "
+        >
           <p
             *ngIf="
               loginTDForm.submitted &&
-              loginTDForm.controls['txtUserName'].touched &&
-              loginTDForm.controls['txtUserName'].dirty
+              loginTDForm.controls['userName'].touched &&
+              loginTDForm.controls['userName'].dirty &&
+              loginTDForm.controls['userName'].errors.minlength
             "
           >
             Username must be greater than or equal to 4.. !
+          </p>
+          <p
+            *ngIf="
+              loginTDForm.submitted &&
+              loginTDForm.controls['userName'].touched &&
+              loginTDForm.controls['userName'].dirty &&
+              loginTDForm.controls['userName'].errors.required
+            "
+          >
+            Username cannot be empty..!!
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label> Password</label>
+        <input type="password" name="password" class="form-control" ngModel />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-success m-2">
+          Login
+        </button>
+        <button type="button" class="btn btn-info m-2">Signup</button>
+      </div>
+    </form> -->
+    <form
+      name="loginForm"
+      #loginTDForm="ngForm"
+      (ngSubmit)="login(loginTDForm)"
+      [formGroup]="loginFG"
+    >
+      <h2 class="ht-login-title">Login</h2>
+      <div class="form-group">
+        <label> Username</label>
+        <input
+          type="text"
+          name="userName"
+          class="form-control"
+          formControlName="userName"
+        />
+
+        <div
+          class="text-danger"
+          *ngIf="
+            loginTDForm.submitted &&
+            loginFG.controls['userName'] &&
+            loginFG.controls['userName'].errors
+          "
+        >
+          <p
+            *ngIf="
+              loginFG.controls['userName'].touched &&
+              loginFG.controls['userName'].dirty &&
+              loginFG.controls['userName'].errors.minlength
+            "
+          >
+            Username must be greater than or equal to 4.. !
+          </p>
+          <p
+            *ngIf="
+              loginFG.controls['userName'].touched &&
+              loginFG.controls['userName'].dirty &&
+              loginFG.controls['userName'].errors.required
+            "
+          >
+            Username cannot be empty..!!
           </p>
         </div>
       </div>
@@ -33,9 +108,9 @@
         <label> Password</label>
         <input
           type="password"
-          name="txtPassword"
+          name="password"
           class="form-control"
-          ngModel
+          formControlName="password"
         />
       </div>
 

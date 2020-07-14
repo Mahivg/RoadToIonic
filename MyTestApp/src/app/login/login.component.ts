@@ -3,7 +3,7 @@ import { TestObj } from '../models/test';
 import { SingletonExample } from '../models/Singleton';
 import { AuthService } from '../shared/Auth.service';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'ht-login',
@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
     },
   ];
 
+  loginFG: FormGroup;
+
   constructor(
     public singtonObj: SingletonExample,
     private authService: AuthService,
@@ -53,9 +55,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     console.log(TestObj.product);
     console.log(this.singtonObj);
+
+    this.loginFG = new FormGroup({
+      userName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      password: new FormControl(''),
+    });
   }
 
-  login(loginTdForm: NgForm) {
+  login(loginTdForm: any) {
     // console.log(this.userNameInput.nativeElement.value);
     // console.log(this.passwordInput.nativeElement.value);
 
@@ -74,7 +84,40 @@ export class LoginComponent implements OnInit {
     // } else {
     //   alert('Invalid User credentials..!!');
     // }
-    console.log(loginTdForm);
-    console.log(loginTdForm.value);
+
+    // Using Template Driven Fomr
+
+    // console.log(loginTdForm);
+    // console.log(loginTdForm.value);
+    // const userCred = loginTdForm.value;
+
+    // const validUser = this.authService.validateUserCred(
+    //   userCred.userName,
+    //   userCred.password
+    // );
+    // if (validUser) {
+    //   this.authService.userLogin.next(validUser);
+    //   this.router.navigateByUrl('/products');
+    // } else {
+    //   alert('Invalid User credentials..!!');
+    // }
+
+    // Using Reactive Form
+
+    console.log(this.loginFG);
+    console.log(this.loginFG.value);
+
+    const userCred = this.loginFG.value;
+
+    const validUser = this.authService.validateUserCred(
+      userCred.userName,
+      userCred.password
+    );
+    if (validUser) {
+      this.authService.userLogin.next(validUser);
+      this.router.navigateByUrl('/products');
+    } else {
+      alert('Invalid User credentials..!!');
+    }
   }
 }
