@@ -16,6 +16,7 @@ import { SingletonExample } from './models/Singleton';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGaurd } from './shared/AuthGaurd';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
   providers: [SingletonExample], // => new SingletonEXmaple() => pass the instance
   bootstrap: [AppComponent],
