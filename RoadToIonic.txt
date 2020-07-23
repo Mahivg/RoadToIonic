@@ -1354,12 +1354,77 @@ Ionic with Angular:
 			name = "test"
 			
 		Html
-			{{ name | limit:1 }} => n
+			{{ name | limitTo:1 }} => n
 		
 		
 	Default
 	
-		uppercase, lowercase, date, json, currency, limitTo
+		uppercase, lowercase, date | 'medium', json, currency, limitTo
+		
+		
+	HTTP Calls :
+	
+		
+		Angular Application 		< === > 			Data providers
+								  Over Internet
+								  
+		
+		HttpClient
+				
+				GET												DATA_URL => Support Method
+				
+				
+				POST (Addition)
+
+
+				PUT ( Update)
+				
+				
+				DELETE (removal) 
+				
+				Request
+					Headers => responseType : 'application/json'
+								authorization : 'Bearer asdnasndklasndlsansjcndskcdskcdsncksdcsln"
+								
+					Path parameters:
+					  
+						https://jsonplaceholder.typicode.com/users/1 => 1 is a path paremeters
+						
+					Query parameters
+					
+						https://jsonplaceholder.typicode.com/users/1?count=10&page=1
+						
+								count is a key, 10 is value => count is a query param
+								
+								
+		1. Include HttpClientModule to Appmodule
+		
+		2. Inject HttpClient in controller constrcutor
+		
+		
+			this.httpClient.get => only url and params if any
+			
+			this.httpClient.post => url, body and params if any
+			
+			this.httpClient.put =>  url, body and params if any
+			
+			this.httpClient.delete => only url and params if any
+		
+		
+		3. construct url based on ur need
+		
+			path parameter => this.postURL + '/' + postID
+			
+			
+			queryParams => let httpParams = new HttpParams()
+			
+							httpParams = httpParams.append('userId' , userId)
+							
+							?userId=1
+							
+							
+		
+		
 		
 		
 		
